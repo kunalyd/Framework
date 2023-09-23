@@ -12,16 +12,16 @@ public class LoginPage {
 		this.driver = ldriver;
 	}
 
-	@FindBy(xpath = "//ul[@Class='rd-navbar-nav']//a[@Class='btn btn-primary btn-xs-2 btn-shadow btn-rect btn-icon btn-icon-left']")
-	WebElement loginButton;
+	/*@FindBy(xpath = "//input[@type='submit']")
+	WebElement loginButton; */
 
-	@FindBy(name = "email")
+	@FindBy(name = "username")
 	WebElement uname;
 
 	@FindBy(name = "password")
 	WebElement pass;
 
-	@FindBy(xpath = "//div[contains(@Class,'ui fluid large blue submit button')]")
+	@FindBy(xpath = "//input[@type='submit']")
 	WebElement login;
 
 	public void loginToCRM(String username, String password) {
@@ -30,7 +30,7 @@ public class LoginPage {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		loginButton.click();
+	//	loginButton.click();
 		uname.sendKeys(username);
 		pass.sendKeys(password);
 		login.click();
